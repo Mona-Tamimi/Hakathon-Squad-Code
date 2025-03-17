@@ -14,21 +14,53 @@
 </head>
 <!-- الفكرة هون بصفحة البروفايل انه ما رح تظهر اذا ما في user -->
 <body>
-
-    <div class="container">
-        <h2>الملف الشخصي</h2>
-        <div id="profileDetails">
-            <p><strong>الاسم:</strong> <span id="profileUsername"></span></p>
-            <p><strong>البريد الإلكتروني:</strong> <span id="profileEmail"></span></p>
-            <p><strong>المدينة:</strong> <span id="profileCity"></span></p>
-            <p><strong>رقم الهاتف:</strong> <span id="profilenumber"></span></p>
-
+    <div class="text-center mt-4">
+        <a href="index.html" class="btn">العودة إلى الصفحة الرئيسية</a>
+    </div>
+    
+    <div class="profile-container">
+        <!-- بيانات المستخدم -->
+        <div class="profile-box">
+            <h2>الملف الشخصي</h2>
+            <div id="profileDetails">
+                <p><strong>الاسم:</strong> <span id="profileUsername"></span></p>
+                <p><strong>البريد الإلكتروني:</strong> <span id="profileEmail"></span></p>
+                <p><strong>المدينة:</strong> <span id="profileCity"></span></p>
+                <p><strong>رقم الهاتف:</strong> <span id="profilenumber"></span></p>
+            </div>
         </div>
-        <!-- <button id="logoutButton">تسجيل الخروج</button> -->
+
+        <!-- التبرعات -->
+        <div class="donation-box">
+            <h3>التبرعات السابقة</h3>
+            <div class="donation-table-container">
+                <table border="1" class="donation-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>الاسم</th>
+                            <th>رقم الهاتف</th>
+                            <th>البريد الإلكتروني</th>
+                            <th>نوع المتبرع</th>
+                            <th>منطقة الاستلام</th>
+                            <th>رابط الخريطة</th>
+                            <th>نوع التبرع</th>
+                            <th>تاريخ الاستلام</th>
+                            <th>وقت الاستلام</th>
+                        </tr>
+                    </thead>
+                    <tbody id="donationTableBody"></tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <script src="/js/profile.js"></script>
+    <script src="/js/index.js"></script>
+    
 </body>
+
+
 </html>
 
 </body>

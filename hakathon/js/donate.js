@@ -50,7 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         localStorage.setItem("donationFormData", JSON.stringify(donations));
 
-        alert("تم حفظ البيانات بنجاح!");
-        form.reset(); 
+        Swal.fire({
+            title: "شكراً لك!",
+            text: "تم إرسال طلب التبرع بنجاح",
+            icon: "success",
+            confirmButtonText: "حسناً"
+        });
+                form.reset(); 
     });
 });

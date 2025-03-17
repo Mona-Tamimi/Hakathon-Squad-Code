@@ -165,6 +165,11 @@ input {
     flex-direction: column;
 }
 
+.logoF {
+    width: 22vw;
+    height: 9vw;
+    margin-right: -7vw;
+}
 
 @media (max-width: 925px) {
     .container_form {
