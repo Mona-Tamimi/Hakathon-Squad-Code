@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/donate.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/contact.css'>
+    <meta name="direction" content="rtl">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=DM+Serif+Text:ital@0;1&family=Fredoka:wght@300..700&family=Fustat:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Stick+No+Bills:wght@200..800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+<!--nav-->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/index.html">
+            <img src="/img/logo.png" alt="الريان" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link text-white" href="/about.html">من نحن</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/contact.html">تواصل معنا</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-bold" href="/donate.html">تبرع الآن</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-bold" href="/Community.html">المجتمع</a></li>
+            </ul>
+            <ul class="navbar-nav auth-buttons">
+                <li class="nav-item" id="register-btn"><a class="nav-link btn-main" href="/regester.html">إنشاء حساب</a></li>
+                <li class="nav-item" id="login-btn"><a class="nav-link btn-main" href="/login.html">تسجيل دخول</a></li>
+                <li class="nav-item" id="account-btn" style="display: none;"><a class="nav-link btn-main" href="/profile.html">حسابي</a></li>
+                <li class="nav-item" id="logout-btn" style="display: none;">
+                    <a class="nav-link btn-main" href="#" onclick="logout()">تسجيل خروج</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--nav-->
+
+
+<!--Hero-->
+<div class="header d-flex align-items-center text-white text-center" style="background: url('/img/contact.jpg') repeat center top; height: 200px;">
+    <div class="container position-relative d-flex flex-column align-items-center">
+        <h2>تبرّع الأن</h2>
+    </div>
+</div>
+<!--Hero-->
+
+
+<!--form-->
+    <div class="container_form">
+        <form>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>الاسم الكامل *</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label>رقم الجوال *</label>
+                    <input type="text" id="phoneNumber" required>
+                </div>
+                <div class="form-group">
+                    <label>بريد إلكتروني *</label>
+                    <input type="email" id="email" required>
+                </div>
+            </div>
+    
+            <div class="form-row">
+                <div class="form-group half-width">
+                    <label>نوع الجهة المانحة *</label>
+                    <select required id="donorType">
+                        <option value=""> حدد نوع الجهة المانحة</option>
+                        <option value="منظمة"> منظمة</option>
+                        <option value="مطعم"> مطعم</option>
+                        <option value="شخص"> شخص</option>
+                    </select>
+                </div>
+
+                <div class="form-group double-width">
+                    <div class="form-row">
+                    <div class="form-group">
+                        <label>منطقة الاستلام *</label>
+                        <input type="text" id="pickupArea" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>رابط الموقع على الخريطة *</label>
+                        <input type="text" id="mapLink" required>
+                    </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-row">
+                <div class="form-group half-width">
+                    <label >نوع التبرع*</label>
+                    <select required id="donationType">
+                        <option value="">حدد نوع التبرع </option>
+                        <option value="مطبوخ"> اكل مطبوخ</option>
+                        <option value="تموينية"> مواد تموينية</option>
+                    </select>
+                </div>
+                <div class="form-group double-width">
+                <div class="form-row">
+                <div class="form-group">
+                    <label>تاريخ الاستلام المفضل *</label>
+                    <input type="date" class="date font-white" id="preferredPickupDate" name="preferredPickupDate" value="" required>
+                </div>
+                <div class="form-group">
+                    <label>وقت الاستلام المفضل *</label>
+
+                    <select required id="preferredPickupTime">
+                        <option value="">حدد وقت الاستلام المفضل </option>
+                        <option value="1">1:00 م</option>
+                        <option value="4">4:00 م</option>
+                        <option value="6">6:00 م</option>
+                        <option value="12">12:00 ص بعد الافطار</option>
+                    </select>
+                </div>
+                </div>
+                </div>
+            </div>
+
+    
+            <button type="submit" class="btn-submit">إرسال</button>
+        </form>
+    </div>
+<!--form-->
+    
+    <div class="footer" style="background-color: #D98A29; height: 300px; width: 100%; position: relative; margin-top: auto;"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src='/js/donate.js'></script>
+</body>
+</html>
